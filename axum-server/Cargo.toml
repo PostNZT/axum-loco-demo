@@ -1,0 +1,45 @@
+# axum-server/Cargo.toml - AXUM server implementation for comparison
+[package]
+name = "axum-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Shared utilities
+shared = { path = "../shared" }
+
+# Core dependencies
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# AXUM and HTTP
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+hyper = { workspace = true }
+
+# GraphQL
+async-graphql = { workspace = true }
+async-graphql-axum = { workspace = true }
+
+# Authentication and security
+jsonwebtoken = { workspace = true }
+bcrypt = { workspace = true }
+
+# Database (mock for demo)
+uuid = { workspace = true }
+chrono = { workspace = true }
+
+# HTTP client
+reqwest = { workspace = true }
+
+# Additional dependencies for AXUM
+futures-util = { workspace = true }
+rand = { workspace = true }
+hmac = { workspace = true }
+sha2 = { workspace = true }
+base64 = { workspace = true }
