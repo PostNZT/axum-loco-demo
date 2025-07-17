@@ -1,0 +1,25 @@
+# shared/Cargo.toml - Shared types and utilities for AXUM vs LOCO comparison
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+async-graphql = { workspace = true }
+reqwest = { workspace = true }
+tokio = { workspace = true }
+bcrypt = { workspace = true }
+jsonwebtoken = { workspace = true }
+tracing = { workspace = true }
+rand = { workspace = true }
+hmac = { workspace = true }
+sha2 = { workspace = true }
+base64 = { workspace = true }
+tokio-stream = { workspace = true }
+futures-util = { workspace = true }

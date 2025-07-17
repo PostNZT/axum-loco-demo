@@ -1,0 +1,112 @@
+# Cargo.toml - Main project configuration for AXUM vs LOCO comparison demo
+[package]
+name = "axum-loco-demo"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+    "axum-server",
+    "loco-server",
+    "benchmarks",
+    "shared"
+]
+
+[workspace.dependencies]
+# Core async runtime
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# HTTP and web frameworks
+axum = { version = "0.8", features = ["macros", "multipart"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace", "auth", "compression-gzip"] }
+hyper = "1.0"
+
+# Database and ORM (for LOCO-style patterns)
+sea-orm = { version = "0.12", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros"] }
+
+# GraphQL
+async-graphql = { version = "7.0", features = ["chrono", "uuid"] }
+async-graphql-axum = "7.0"
+
+# Database and ORM
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "chrono", "uuid"] }
+
+# Authentication and security
+jsonwebtoken = "9.0"
+bcrypt = "0.15"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# HTTP client for Shopify integration
+reqwest = { version = "0.11", features = ["json"] }
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports"] }
+
+# CLI and utilities
+clap = { version = "4.0", features = ["derive"] }
+rand = "0.8"
+
+# Additional utilities
+hmac = "0.12"
+sha2 = "0.10"
+base64 = "0.21"
+tokio-stream = "0.1"
+futures-util = "0.3"
+
+[dependencies]
+# Shared utilities
+shared = { path = "shared" }
+
+# Core dependencies
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# AXUM and HTTP
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+hyper = { workspace = true }
+
+# GraphQL
+async-graphql = { workspace = true }
+async-graphql-axum = { workspace = true }
+
+# Authentication and security
+jsonwebtoken = { workspace = true }
+bcrypt = { workspace = true }
+
+# Database (mock for demo)
+uuid = { workspace = true }
+chrono = { workspace = true }
+
+# HTTP client
+reqwest = { workspace = true }
+
+# Additional dependencies
+futures-util = { workspace = true }
+rand = { workspace = true }
+hmac = { workspace = true }
+sha2 = { workspace = true }
+base64 = { workspace = true }
+tokio-stream = { workspace = true }
+
+# CLI for benchmarks
+clap = { workspace = true }
+
+
+[dev-dependencies]
+criterion = { workspace = true }
