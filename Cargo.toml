@@ -1,10 +1,6 @@
 # Cargo.toml - Main project configuration for AXUM vs LOCO comparison demo
-[package]
-name = "axum-loco-demo"
-version = "0.1.0"
-edition = "2021"
-
 [workspace]
+resolver = "2"
 members = [
     "axum-server",
     "loco-server",
@@ -62,51 +58,3 @@ sha2 = "0.10"
 base64 = "0.21"
 tokio-stream = "0.1"
 futures-util = "0.3"
-
-[dependencies]
-# Shared utilities
-shared = { path = "shared" }
-
-# Core dependencies
-tokio = { workspace = true }
-serde = { workspace = true }
-serde_json = { workspace = true }
-anyhow = { workspace = true }
-tracing = { workspace = true }
-tracing-subscriber = { workspace = true }
-
-# AXUM and HTTP
-axum = { workspace = true }
-tower = { workspace = true }
-tower-http = { workspace = true }
-hyper = { workspace = true }
-
-# GraphQL
-async-graphql = { workspace = true }
-async-graphql-axum = { workspace = true }
-
-# Authentication and security
-jsonwebtoken = { workspace = true }
-bcrypt = { workspace = true }
-
-# Database (mock for demo)
-uuid = { workspace = true }
-chrono = { workspace = true }
-
-# HTTP client
-reqwest = { workspace = true }
-
-# Additional dependencies
-futures-util = { workspace = true }
-rand = { workspace = true }
-hmac = { workspace = true }
-sha2 = { workspace = true }
-base64 = { workspace = true }
-tokio-stream = { workspace = true }
-
-# CLI for benchmarks
-clap = { workspace = true }
-
-
-[dev-dependencies]
-criterion = { workspace = true }
